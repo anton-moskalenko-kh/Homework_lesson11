@@ -4,25 +4,21 @@ const slides = document.querySelectorAll('.main-slide');
 
 let index = 0;
 const activeSlide = function (n) {
-    for (slide of slides) {
+    for (let slide of slides) {
         slide.classList.remove('active')
     }
     slides[n].classList.add('active')
 }
 
 const nextSlide = function () {
-    if (index === slides.length - 1) {
-        activeSlide(index)
-    } else {
+    if (index !== slides.length - 1) {
         index++;
         activeSlide(index);
     }
 }
 
 const prevSlide = function () {
-    if (index === 0) {
-        activeSlide(index)
-    } else {
+    if (index !== 0) {
         index--;
         activeSlide(index)
     }
