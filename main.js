@@ -15,6 +15,8 @@ const nextSlide = function () {
         index++;
         activeSlide(index);
     }
+    clearInterval(timer);
+    goAhead();
 }
 
 const prevSlide = function () {
@@ -24,5 +26,13 @@ const prevSlide = function () {
     }
 }
 
-buttonNext.addEventListener('click', nextSlide);
+let timer;
+function goAhead () {
+    timer = setInterval(nextSlide,5000);
+}
+goAhead();
+
 buttonPrev.addEventListener('click', prevSlide);
+buttonNext.addEventListener('click', nextSlide);
+
+
