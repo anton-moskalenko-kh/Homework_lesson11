@@ -24,6 +24,8 @@ const prevSlide = function () {
         index--;
         activeSlide(index)
     }
+    clearInterval(timer);
+    goAhead();
 }
 
 let timer;
